@@ -16,7 +16,7 @@ public class Vehicle {
     private String brand;
     private String model;
     private int manufactureYear;
-    private  String plate;
+    private String plate;
     private String chassis;
     private double marketValue;
 }

@@ -4,10 +4,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 public class InsuredDTO {
 
-        private Long id;
+    private Long id;
 
     public Long getId() {
         return id;
@@ -18,7 +17,7 @@ public class InsuredDTO {
     }
 
     private String fullName;
-        private String dateOfBirth;
+    private String dateOfBirth;
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
@@ -62,7 +61,8 @@ public class InsuredDTO {
 
     private Gender gender;
 
-    public InsuredDTO(Long id, String fullName, String dateOfBirth, Gender gender, MaritalStatus maritalStatus, Address address) {
+    public InsuredDTO(Long id, String fullName, String dateOfBirth, Gender gender, MaritalStatus maritalStatus,
+            Address address) {
         this.id = id;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;

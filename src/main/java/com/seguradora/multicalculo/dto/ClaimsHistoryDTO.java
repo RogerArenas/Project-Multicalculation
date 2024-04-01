@@ -3,6 +3,7 @@ package com.seguradora.multicalculo.dto;
 import lombok.Data;
 
 import java.util.Date;
+
 @Data
 public class ClaimsHistoryDTO {
     private Long insuredId;

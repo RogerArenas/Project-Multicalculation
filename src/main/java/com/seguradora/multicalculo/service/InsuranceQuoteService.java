@@ -11,9 +11,8 @@ public class InsuranceQuoteService {
     @Autowired
     private InsuranceQuoteRepository insuranceQuoteRepository;
 
-    public InsuranceQuote createInsuredQuote(InsuranceQuote insuranceQuote){
+    public InsuranceQuote createInsuredQuote(InsuranceQuote insuranceQuote) {
         return insuranceQuoteRepository.save(insuranceQuote);
     }
-
 
 }

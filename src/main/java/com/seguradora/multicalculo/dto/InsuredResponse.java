@@ -6,9 +6,8 @@ import lombok.Data;
 @Data
 public class InsuredResponse {
 
-private String message;
-private Insured insured;
-
+    private String message;
+    private Insured insured;
 
     public InsuredResponse(String message, Insured createdInsured) {
         this.message = message;

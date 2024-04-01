@@ -11,7 +11,7 @@ public class VehicleService {
     @Autowired
     private VehicleRepository vehicleRepository;
 
-    public Vehicle createVehicle(Vehicle vehicle){
+    public Vehicle createVehicle(Vehicle vehicle) {
         Vehicle vehicle1 = new Vehicle();
 
         return vehicleRepository.save(vehicle);

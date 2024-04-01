@@ -22,12 +22,12 @@ public class InsuredService {
     }
 
     public Insured createInsured(Insured insured) throws Exception {
-        if(insured == null){
-                throw new Exception("Dados não podem ser nullos!!");
-            }
-            insuredRepository.save(insured);
+        if (insured == null) {
+            throw new Exception("Dados não podem ser nullos!!");
+        }
+        insuredRepository.save(insured);
 
-            return insured;
+        return insured;
     }
 
     public Insured getInsuredById(Long id) {
@@ -36,20 +36,20 @@ public class InsuredService {
     }
 
     public Insured updateInsured(Insured insured) {
-        if(insuredRepository.existsById(insured.getId())){
+        if (insuredRepository.existsById(insured.getId())) {
             return insuredRepository.save(insured);
-        }else {
+        } else {
             throw new dataNotFoundException("Insured not found in the database");
         }
     }
 
     public void deleteInsured(Long id) {
         Optional<Insured> optionalInsured = insuredRepository.findById(id);
-         if (!optionalInsured.isEmpty()){
-             insuredRepository.delete(optionalInsured.get());
-         }else {
-             throw new dataNotFoundException("Insured note found with id:" + id);
-         }
+        if (!optionalInsured.isEmpty()) {
+            insuredRepository.delete(optionalInsured.get());
+        } else {
+            throw new dataNotFoundException("Insured note found with id:" + id);
+        }
 
     }
 }
