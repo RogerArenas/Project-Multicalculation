@@ -37,12 +37,27 @@ public class InsuredController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<InsuredDTO> updateInsured(@PathVariable Long id, @RequestBody InsuredDTO insuredDTO){
+    public ResponseEntity<Insured> updateInsured(@PathVariable Long id, @RequestBody Insured insuredDTO){
        Optional<Insured> existingInsured = Optional.ofNullable(insuredService.getInsuredById(id));
        if (!existingInsured.isEmpty()){
+           insuredDTO.setId(id);
+          Insured updateInsured = insuredService.updateInsured(insuredDTO);
+          return new ResponseEntity<>(updateInsured,HttpStatus.OK);
 
-
+       } else {
+           return new ResponseEntity<>(HttpStatus.NOT_FOUND);
        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Insured> deleteInsured(@PathVariable Long id){
+              Insured existingInsure = insuredService.getInsuredById(id);
+              if(existingInsure != null ){
+                 insuredService.deleteInsured(id);
+                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+              }else {
+                  return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+              }
     }
 
 }

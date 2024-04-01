@@ -17,6 +17,30 @@ public class Insured {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Long getId() {
         return id;
     }

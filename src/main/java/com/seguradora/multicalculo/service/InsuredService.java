@@ -1,5 +1,6 @@
 package com.seguradora.multicalculo.service;
 
+import com.seguradora.multicalculo.dto.InsuredDTO;
 import com.seguradora.multicalculo.exception.dataNotFoundException;
 import com.seguradora.multicalculo.model.Insured;
 import com.seguradora.multicalculo.repository.InsuredRepository;
@@ -40,5 +41,15 @@ public class InsuredService {
         }else {
             throw new dataNotFoundException("Insured not found in the database");
         }
+    }
+
+    public void deleteInsured(Long id) {
+        Optional<Insured> optionalInsured = insuredRepository.findById(id);
+         if (!optionalInsured.isEmpty()){
+             insuredRepository.delete(optionalInsured.get());
+         }else {
+             throw new dataNotFoundException("Insured note found with id:" + id);
+         }
+
     }
 }
