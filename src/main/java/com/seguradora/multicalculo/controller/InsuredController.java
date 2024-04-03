@@ -1,6 +1,5 @@
 package com.seguradora.multicalculo.controller;
 
-import com.seguradora.multicalculo.dto.InsuredDTO;
 import com.seguradora.multicalculo.dto.InsuredResponse;
 import com.seguradora.multicalculo.model.Insured;
 import com.seguradora.multicalculo.service.InsuredService;
