@@ -7,7 +7,9 @@ import java.util.Date;
 @Data
 public class InsuranceQuoteDTO {
     private Long insuredId;
+
     private Long vehicleId;
+
     private Date quoteDate;
     private char theftCoverage;
     private char collisionCoverage;

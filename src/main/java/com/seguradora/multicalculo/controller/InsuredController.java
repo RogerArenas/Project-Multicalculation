@@ -1,6 +1,5 @@
 package com.seguradora.multicalculo.controller;
 
-import com.seguradora.multicalculo.dto.InsuredDTO;
 import com.seguradora.multicalculo.dto.InsuredResponse;
 import com.seguradora.multicalculo.model.Insured;
 import com.seguradora.multicalculo.service.InsuredService;
@@ -16,13 +15,20 @@ import java.util.Optional;
 public class InsuredController {
 
     @Autowired
+
     private InsuredService insuredService;
 
     @PostMapping()
-    public ResponseEntity<InsuredResponse> createdInsured(@RequestBody Insured insured) throws Exception {
+
+    public ResponseEntity<InsuredResponse>
+
+            createdInsured(@RequestBody Insured insured) throws Exception {
+
         Insured createdInsured = insuredService.createInsured(insured);
+
         String message = "Segurado criado com sucesso!";
-        InsuredResponse response = new InsuredResponse(message, createdInsured);
+
+        InsuredResponse response = new InsuredResponse(message, createdInsured, HttpStatus.CREATED);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
